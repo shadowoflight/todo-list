@@ -1,0 +1,17 @@
+.item-table {
+    border-top: 10px;
+    background-color:burlywood;
+}
+.forms {
+    border: 2px;
+    border-color: burlywood;
+}
+.container{
+    margin-left: 30%;
+    margin-right: 30%;
+    padding-top: 2%;
+    padding-right: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    background-color: grey;
+}
