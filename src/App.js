@@ -5,14 +5,16 @@ import './table.css'
 class App extends Component {
   constructor(props){
     super(props)
+    this.pending=0
     this.state = {
     todos: [],
-    pending:0
-};
+    
+   }
   }
 
 deleteItem = (toBeDel) => {
   const filteredItems = this.state.todos.filter(x => x.Id !== toBeDel.Id);
+  this.pending=this.pending-1;
   this.setState({
        todos: filteredItems
   });
@@ -23,7 +25,7 @@ editStats = (stats) => {
          if (todo.Id === stats.Id) {
              return {
                    ...todo,
-                   status: todo.Status === "Done" ? "Pending" : "Done"
+                   status: todo.status === "Done" ? "Pending" : "Done"
              };
         } else {
             return todo;
@@ -36,13 +38,22 @@ addToDo = (todo) => {
       todos: [...this.state.todos, todo]
   });
 };
+componentDidUpdate(){
+  let pending =0 
+  this.state.todos.forEach(index => {
+   pending = pending+1
+  })
+  this.pending=pending
+  console.log(this.pending)
+}
 
 render() {
+  console.log('here render')
     return (
          <div className="container" >
              <h1>TodoList </h1>
              <TodoList onAdd={this.addToDo} />
-             <h3>You have {this.state.todos.length} item in your list</h3>
+             <h3>You have {this.pending +1} item in your list </h3>
              <table className="item-table">
                    <thead>
                      <tr>
