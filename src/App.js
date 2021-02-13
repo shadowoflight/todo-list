@@ -8,7 +8,7 @@ class App extends Component {
       return (
         <Switch>
           <Route exact path='/' component={App2} />
-          <Route exact path='/deletedItems' component={DeletedItems} />
+          <Route exact path='/deleteditems' component={DeletedItems} />
           
         </Switch>
       );

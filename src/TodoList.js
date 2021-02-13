@@ -4,38 +4,48 @@ export default class TodoList extends Component {
     constructor(props){
         super(props)
     this.state = {
+        item : {
         Id: "",
         Title: "",
         status: "Pending"
+        }
 
     };
 }
    handleIdChange = (event) => {
         this.setState({
-            Id: event.target.value
+            item : event.target.value
         });
     };
     handleTitleChange = (event) => {
         this.setState({
-            Title: event.target.value
+            item : {
+                Id: event.target.value
+            }
         });
     }
     handleStatusChange = (event) => {
         this.setState({
+            item : {
             status: event.target.value
+            }
         });
     };
     handleToDoSubmit = (event) => {
         event.preventDefault();
         this.props.onAdd({
+            item : {
             Id: this.state.Id,
             Title: this.state.Title,
             status: this.state.status
+            }
         });
         this.setState({
+            item : {
             Id: "",
             Title: "",
             status: "Pending"
+            }
         });
     };
     componentDidMount(){

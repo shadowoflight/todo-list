@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import TodoList from './TodoList.js';
 import './table.css'
-
+import delAPI from './api/DeletedItems'
 class App2 extends Component {
   constructor(props){
     super(props)
@@ -11,6 +11,7 @@ class App2 extends Component {
     deleteItem: []
     
    }
+   this.deletedItems = new delAPI()
   }
 
 deleteItem = (toBeDel) => {
