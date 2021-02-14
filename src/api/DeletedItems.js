@@ -6,7 +6,7 @@ export default class DeletedItems {
         this.postURL = 'localhost:3000/deleteditems'
     }
 
-    getDeleteditems(){
+    getDeletedItems(){
         return axios.get(this.getURL)
         .then((res) => {
             const error = res.data.error
@@ -17,8 +17,9 @@ export default class DeletedItems {
             return err
         })
     }
-    sendDeleteditems() {
-        return axios.post(this.postURL)
+    sendDeletedItems(deleteditems) {
+        deleteditems = this.deleteditems
+        return axios.post(this.postURL,{'deleteditems' : deleteditems})
         .then ((res) => {
             const error = res.data.error;
             if(error) throw error

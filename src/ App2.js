@@ -21,7 +21,13 @@ deleteItem = (toBeDel) => {
   this.setState({
        todos: filteredItems,
        deletedItem : deletedItems
-  });
+  })
+  this.deletedItems.sendDeletedItems(deletedItems  => {
+    this.setState({
+      todos: filteredItems,
+      deletedItem : deletedItems
+ })
+  })
 };
 editStats = (stats) => {
   this.setState(state => ({

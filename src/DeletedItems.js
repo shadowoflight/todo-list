@@ -17,7 +17,7 @@ class DeletedItems extends Component {
     }
 
     getItems(){
-        this.DeletedItems.getDeleteditems().then(res => {
+        this.DeletedItems.getDeletedItems().then(res => {
             this.setState({
                 deletedItems : res.DeletedItems
             })
