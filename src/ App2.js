@@ -32,10 +32,10 @@ deleteItem = (toBeDel) => {
 editStats = (stats) => {
   this.setState(state => ({
        todos: state.todos.map(todo => {
-         if (todo.Id === stats.Id) {
+         if (todo.item.Id === stats.Id) {
              return {
                    ...todo,
-                   status: todo.status === "Done" ? "Pending" : "Done"
+                   status: todo.item.status === "Done" ? "Pending" : "Done"
              };
         } else {
             return todo;
@@ -45,7 +45,7 @@ editStats = (stats) => {
 };
 addToDo = (todo) => {
   this.setState({
-      todos: [...this.state.todos, todo]
+      todos: [...this.state.todos, todo.item]
   });
 };
 componentDidUpdate(){
@@ -60,7 +60,6 @@ render() {
          <div className="container" >
              <h1 className="header">TodoList </h1>
              <TodoList onAdd={this.addToDo} />
-             <h3>You have {this.pending+1} item in your list </h3>
              <table className="item-table">
                    <thead>
                      <tr>

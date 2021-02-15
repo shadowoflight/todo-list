@@ -48,8 +48,7 @@ export default class TodoList extends Component {
             }
         });
     };
-    componentDidMount(){
-    }
+    
     render() {
         return (
             <div>
@@ -59,14 +58,14 @@ export default class TodoList extends Component {
                 <form className="forms" onSubmit={this.handleToDoSubmit} >
                     <div className="form-group" >
                         <label>Id: </label>
-                        <input value={this.state.Id} onChange={this.handleIdChange} className="form-control" placeholder="Enter Id" />
+                        <input value={this.state.item.Id} onChange={this.handleIdChange} className="form-control" placeholder="Enter Id" />
                     </div>
                     <div className="form-group" >
                     <label>Item Name: </label>
-                        <input value={this.state.Title} onChange={this.handleTitleChange} className="form-control" placeholder="Enter Title" />
+                        <input value={this.state.item.Title} onChange={this.handleTitleChange} className="form-control" placeholder="Enter Title" />
                     </div>
                     <div className="form-group">
-                        <select value={this.state.status} onChange={this.handleStatusChange} className="form-control" >
+                        <select value={this.state.item.status} onChange={this.handleStatusChange} className="form-control" >
                             <option value="Done" >Done</option>
                             <option value="Pending" >Pending</option>
                         </select>

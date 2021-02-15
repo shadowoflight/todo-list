@@ -2,8 +2,8 @@ import axios from 'axios'
 
 export default class DeletedItems {
     constructor(){
-        this.getURL = 'localhost:3000'
-        this.postURL = 'localhost:3000/deleteditems'
+        this.getURL = 'localhost:5000'
+        this.postURL = 'localhost:5000/deleteditems'
     }
 
     getDeletedItems(){
