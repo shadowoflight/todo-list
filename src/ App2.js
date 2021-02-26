@@ -32,10 +32,10 @@ deleteItem = (toBeDel) => {
 editStats = (stats) => {
   this.setState(state => ({
        todos: state.todos.map(todo => {
-         if (todo.item.Id === stats.Id) {
+         if (todo.Id === stats.Id) {
              return {
                    ...todo,
-                   status: todo.item.status === "Done" ? "Pending" : "Done"
+                   status: todo.status === "Done" ? "Pending" : "Done"
              };
         } else {
             return todo;
@@ -45,7 +45,7 @@ editStats = (stats) => {
 };
 addToDo = (todo) => {
   this.setState({
-      todos: [...this.state.todos, todo.item]
+      todos: [...this.state.todos, todo]
   });
 };
 componentDidUpdate(){
